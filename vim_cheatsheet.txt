@@ -1,0 +1,49 @@
+Vim Cheatsheet
+
+vim - Vi Improved, a programmer's text editor.
+
+*************************
+Files:
+
+/usr/share/vim/vimrc - system wide Vim initializations
+~/.vimrc - your personal Vim initializations
+
+*************************
+Commands:
+
+dw - delete to start of next word
+2dw - delete to start of 2 words ahead
+10dw - delete to start of 10 words ahead
+d$ - delete to end of line
+
+w - move to next word
+2w - move to 2 words ahead
+10w - move to 10 words ahead
+
+2dd - delete 2 lines
+
+u - undo
+U - undo line
+CTRL-R - redo
+
+p - paste a deleted or yanked line
+
+r - replace mode
+rx - replaced character with letter 'x'
+
+ce - delete to end of word + insert mode
+c$ - delete to end of line + insert mode
+
+e - move to end of next word
+
+gg - move to top of file
+G - move to bottom of file
+
+/ - search in forward direction
+? - search in backward direction
+
+************************
+Patterns:
+
+- Put a number 'n' before a command to repeat it 'n' times
+- c [number] motion
