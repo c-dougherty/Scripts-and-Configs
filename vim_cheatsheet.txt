@@ -3,13 +3,16 @@ Vim Cheatsheet
 vim - Vi Improved, a programmer's text editor.
 
 *************************
-Files:
+Files (Unix):
 
 /usr/share/vim/vimrc - system wide Vim initializations
 ~/.vimrc - your personal Vim initializations
 
 *************************
 Commands:
+
+:help command - jump to 'command' in the Vim help file
+:r $VIMRUNTIME/vimrc_example.vim - read the vimrc example
 
 dw - delete to start of next word
 2dw - delete to start of 2 words ahead
@@ -28,13 +31,20 @@ CTRL-R - redo
 
 p - paste a deleted or yanked line
 
-r - replace mode
+r - replace a character
 rx - replaced character with letter 'x'
+R - replace mode
 
 ce - delete to end of word + insert mode
 c$ - delete to end of line + insert mode
 
+o - open line below
+O - open line above
+
 e - move to end of next word
+
+a - append to end of word
+A - append to end of line
 
 gg - move to top of file
 G - move to bottom of file
@@ -42,6 +52,18 @@ G - move to bottom of file
 / - search in forward direction
 ? - search in backward direction
 
+CTRL-v + I - enter insert mode in visual block mode; allows for multiple inserts simultaneously
+v + :w FILENAME - saves the visually selected lines in file FILENAME
+
+:s/old/new/g - substitute all instances of the word 'old' in the current line with the word 'new'
+:a,bs/old/new/g - substitute in the line range [a,b]
+:%s/old/new/g - substitute in the whole file
+:%s/old/new/gc - substitute in the whole file, but confirm at each substitution
+
+:set ic - set ignore case when searching
+:set noic - unset ignore case
+:set hls - set highlight search
+:nohlsearch - unset highlight search
 ************************
 Patterns:
 
