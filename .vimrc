@@ -1,11 +1,31 @@
-syntax on
-filetype indent plugin on
+set nocompatible    " not compatible with Vi
 
-" Python
-set number
-set tabstop=8
+" Set backup unless the system already creates backup files.
+if has("vms")
+    set nobackup
+else
+    set backup
+endif
+
+" Switch syntax highlighting on, when the terminal has colors.
+" Also switch on highlighting the last used search pattern.
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+if has("autocmd")
+   filetype plugin indent on
+else
+    set autoindent
+endif
+
+set tabstop=4
 set expandtab
-set softtabstop=4
 set shiftwidth=4
-set autoindent
-autocmd BufRead *.py set smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
+
+set number
+set history=50      " keep 50 lines of command line history
+set ruler
+set showcmd         " display incomplete commands
+set incsearch       " do incremental searching; display matches as you type
