@@ -12,10 +12,14 @@ endif
 if &t_Co > 2 || has("gui_running")
   syntax on
   set hlsearch
+  set background=dark
 endif
 
 if has("autocmd")
    filetype plugin indent on
+   
+   " Jump to last position when re-opening file
+   au bufreadpost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 else
     set autoindent
 endif
@@ -29,3 +33,4 @@ set history=50      " keep 50 lines of command line history
 set ruler
 set showcmd         " display incomplete commands
 set incsearch       " do incremental searching; display matches as you type
+set showmatch       " show matching brackets
